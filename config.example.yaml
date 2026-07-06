@@ -1,0 +1,33 @@
+# ODA 硬件巡检配置示例
+# 使用方法: 复制本文件为 config.yaml，填写实际值后运行脚本
+
+# ── ILOM 节点列表 ──────────────────────────────────────────────
+# 每个节点填写 ILOM 管理网络的 IP、只读账号和密码
+# Oracle ILOM 默认只读账号: monitor（需管理员事先创建）
+nodes:
+  - name: "生产-节点0"
+    host: "192.168.1.100"
+    username: "monitor"
+    password: "your_password"
+  - name: "生产-节点1"
+    host: "192.168.1.101"
+    username: "monitor"
+    password: "your_password"
+  # 如需监控更多节点，继续追加
+  # - name: "办公-节点0"
+  #   host: "192.168.1.102"
+  #   username: "monitor"
+  #   password: "your_password"
+
+# ── 企业微信 Webhook 推送 ─────────────────────────────────────
+# 不需要推送时，将 webhook_key 留空或删除此节
+wecom:
+  webhook_key: ""   # 填写企业微信机器人的 key，例如 "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+
+# ── 高级参数（通常不需要修改）────────────────────────────────
+advanced:
+  ssh_connect_timeout: 30    # SSH 连接超时（秒）
+  cmd_timeout: 60            # 单条 ILOM 命令超时（秒）
+  wecom_retry_count: 3       # 企业微信推送失败重试次数
+  wecom_retry_interval: 5    # 重试间隔（秒）
+  report_retain_days: 30     # 本地 HTML 报告保留天数
