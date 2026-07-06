@@ -1,3 +1,4 @@
+<img width="1920" height="953" alt="image" src="https://github.com/user-attachments/assets/b0f53714-fe44-442d-997d-4b03f9c52116" />
 # ODA ILOM Inspector
 
 **Oracle Database Appliance X11 HA 硬件巡检工具**
